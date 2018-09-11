@@ -2,10 +2,7 @@ FROM debian:latest
 
 #  $ docker build . -t continuumio/miniconda:latest -t continuumio/miniconda:4.5.4 -t continuumio/miniconda2:latest -t continuumio/miniconda2:4.5.4
 #  $ docker run --rm -it continuumio/miniconda2:latest /bin/bash
-#  $ docker push continuumio/miniconda:latest
-#  $ docker push continuumio/miniconda:4.5.4
-#  $ docker push continuumio/miniconda2:latest
-#  $ docker push continuumio/miniconda2:4.5.4
+
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
@@ -24,6 +21,10 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda2-4.5.4-Linux-x86_
 RUN conda config --add channels defaults &&  \
     conda config --add channels conda-forge && \
     conda config --add channels bioconda
+
+COPY environment.yml environment.yml
+RUN conda env update -f environment.yml
+EXPOSE 80
 
 #docker build -t mfreitas/dsclub_jupyter .
 #docker run -it mfreitas/dsclub_jupyter /bin/bash
