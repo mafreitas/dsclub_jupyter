@@ -7,9 +7,7 @@ docker_image="mfreitas/dsclub_jupyter_r341_py366"
 #EDIT THE FOLLOWING. CHANGE TO YOUR PREFERRED HTTP PORT
 port=8888
 
-share=${PWD}/notebooks
-
-echo Starting up $docker_image
+share=${PWD}
 
 docker run -d \
       -p $port:$port \
@@ -19,4 +17,6 @@ docker run -d \
       --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' \
       --notebook-dir='/data'"
 
-open localhost:0.0.0.0
+sleep 2
+
+open http://localhost:0.0.0.0
