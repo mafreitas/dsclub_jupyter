@@ -4,7 +4,7 @@ FROM ubuntu:18.04
 #No additional packages are installed.
 #
 #Build:
-#docker build -t mfreitas/dsclub_base -f Dockerfile_Miniconda3_4.5.11 .
+#docker build -t mfreitas/dsclub_base -f Dockerfile_Miniconda3-4.5.11 .
 #
 #Run:
 #docker run -it -v $PWD:/data mfreitas/dsclub_base /bin/bash

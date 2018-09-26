@@ -4,17 +4,18 @@ FROM ubuntu:18.04
 #No additional packages are installed.
 #
 #Build:
-#docker build -t mfreitas/dsclub_jupyter -f -f Dockerfile_Miniconda3_4.5.11_jupyter .
+#docker build -t mfreitas/dsclub_jupyter -f -f Dockerfile_Miniconda3-4.5.11_jupyter .
 #
 #Run:
 #docker run -it -p 8888:8888 -v $PWD:/data \
-  mfreitas/dsclub_jupyter /bin/bash -c "jupyter notebook \
-  --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' \
-  --notebook-dir='/data'"
+#  mfreitas/dsclub_jupyter /bin/bash -c "jupyter notebook \
+#  --ip 0.0.0.0 --no-browser --allow-root --NotebookApp.token='' \
+#  --notebook-dir='/data'"
 #
 #Clean images and containers (will delete all images and containers)
 #docker container prune
 #docker image prune -a
+#docker rm dsclub_jupyter
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH

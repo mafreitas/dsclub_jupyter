@@ -19,4 +19,4 @@ docker run -d \
 
 sleep 2
 
-open http://localhost:0.0.0.0
+open http://localhost:$port

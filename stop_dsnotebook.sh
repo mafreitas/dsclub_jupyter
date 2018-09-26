@@ -5,3 +5,4 @@ echo "Stopping Notebook"
 docker_image="mfreitas/dsclub_jupyter_r341_py366"
 
 docker container stop notebookserver
+docker remove $docker_image
