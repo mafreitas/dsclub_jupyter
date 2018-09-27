@@ -17,4 +17,4 @@ set "docker_bin = c:\\Docker\\docker.exe"
 
 sleep 2
 
-start "" http://localhost:%port%
+start "" http://192.168.99.100:%port%
